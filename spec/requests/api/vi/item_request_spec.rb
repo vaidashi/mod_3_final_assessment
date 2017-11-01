@@ -14,7 +14,5 @@ describe "Items Request API" do
     expect(response).to be_success
     expect(json.class).to eq(Array)
     expect(json.count).to eq(5)
-    expect(page).to_not have_content("created_at")
-    expect(page).to_not have_content("updated_at")
   end
 end
