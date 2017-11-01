@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature "User can search for stores" do
   scenario "based on location" do
+    VCR.use_cassette("find_stores") do
     # As a user
     # When I visit "/"
     visit '/'
@@ -22,6 +23,7 @@ feature "User can search for stores" do
         expect(page).to have_css(".phone_number")
         expect(page).to have_css(".store_type")
       end
+    end 
   end
 end
 
